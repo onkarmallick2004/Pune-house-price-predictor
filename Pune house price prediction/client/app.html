@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune House Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js" defer></script>
+	     <link rel="stylesheet" href="app.css">
+    
+</head>
+<body>
+    <div class="background"></div>
+    <div class="logo">PuneEstates</div>
+    <div class="container">
+        <div class="form">
+            <span class="property-icon">🏘️</span>
+            <h1 class="title">Pune House Price Prediction</h1>
+            
+            <div class="price-container">
+                <div class="price-label">Your Budget Range</div>
+                <div class="price-value">₹ <span id="priceDisplay">40,00,000</span></div>
+                <div class="price-range">
+                    <span class="price-min">₹10L</span>
+                    <input type="range" id="priceRange" min="1000000" max="100000000" step="100000" value="4000000" 
+                           oninput="document.getElementById('priceDisplay').innerText = formatPrice(this.value)">
+                    <span class="price-max">₹10Cr</span>
+                </div>
+            </div>
+            
+            <h2>Area (Square Feet)</h2>
+            <input class="input-field" type="text" id="uiSqft" name="Squareft" value="1000">
+
+            <h2>BHK</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-bhk-1" name="uiBHK" value="1">
+                <label for="radio-bhk-1">1</label>
+                <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked>
+                <label for="radio-bhk-2">2</label>
+                <input type="radio" id="radio-bhk-3" name="uiBHK" value="3">
+                <label for="radio-bhk-3">3</label>
+                <input type="radio" id="radio-bhk-4" name="uiBHK" value="4">
+                <label for="radio-bhk-4">4</label>
+                <input type="radio" id="radio-bhk-5" name="uiBHK" value="5">
+                <label for="radio-bhk-5">5</label>
+            </div>
+
+            <h2>Bath</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1">
+                <label for="radio-bath-1">1</label>
+                <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked>
+                <label for="radio-bath-2">2</label>
+                <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3">
+                <label for="radio-bath-3">3</label>
+                <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4">
+                <label for="radio-bath-4">4</label>
+                <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5">
+                <label for="radio-bath-5">5</label>
+            </div>
+
+            <h2>Location</h2>
+            <select class="input-field" id="uiLocations">
+                <option value="" disabled selected>Choose a Location</option>
+                <option>Koregaon Park</option>
+                <option>Baner</option>
+                <option>Viman Nagar</option>
+                <option>Kharadi</option>
+                <option>Hinjewadi</option>
+                <option>Aundh</option>
+                <option>Wakad</option>
+                <option>Magarpatta City</option>
+                <option>Kalyani Nagar</option>
+                <option>Hadapsar</option>
+                <option>Kothrud</option>
+                <option>Pimpri-Chinchwad</option>
+            </select>
+
+            <button class="btn-estimate" type="button" onclick="onClickedEstimatePrice()">Estimate Price</button>
+            <div id="uiEstimatedPrice" class="result"><h2>Price will appear here</h2></div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
