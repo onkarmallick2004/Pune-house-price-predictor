@@ -1,3 +1,9 @@
+![image](https://github.com/user-attachments/assets/a57bdfd9-b918-4260-9f99-955b7b9a656d)
+
+
+
+
+
 🏠 **Pune House Price Predictor**
 This project is a simple web app that predicts the price of a house in Pune using machine learning. You just need to enter a few details like:
 
