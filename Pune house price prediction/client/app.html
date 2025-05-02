@@ -3,84 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pune House Price Prediction</title>
+    <title>PuneEstates - Professional House Price Prediction</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="app.js" defer></script>
-	     <link rel="stylesheet" href="app.css">
-    
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
     <div class="background"></div>
-    <div class="logo">PuneEstates</div>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-home"></i>
+            PuneEstates
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Price Predictor</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
     <div class="container">
-        <div class="form">
-            <span class="property-icon">🏘️</span>
-            <h1 class="title">Pune House Price Prediction</h1>
-            
-            <div class="price-container">
-                <div class="price-label">Your Budget Range</div>
-                <div class="price-value">₹ <span id="priceDisplay">40,00,000</span></div>
-                <div class="price-range">
-                    <span class="price-min">₹10L</span>
-                    <input type="range" id="priceRange" min="1000000" max="100000000" step="100000" value="4000000" 
-                           oninput="document.getElementById('priceDisplay').innerText = formatPrice(this.value)">
-                    <span class="price-max">₹10Cr</span>
+        <div class="form-wrapper">
+            <div class="form">
+                <div class="form-header">
+                    <i class="fas fa-chart-line header-icon"></i>
+                    <h1 class="title">Pune House Price Prediction</h1>
+                    <p class="subtitle">Get accurate price estimates based on real market data</p>
+                </div>
+
+                <div class="price-container">
+                    <div class="price-label">Expected Budget Range</div>
+                    <div class="price-value">₹ <span id="priceDisplay">40,00,000</span></div>
+                    <div class="price-range">
+                        <span class="price-min">₹10L</span>
+                        <input type="range" id="priceRange" min="1000000" max="100000000" step="100000" value="4000000">
+                        <span class="price-max">₹10Cr</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="uiSqft">
+                        <i class="fas fa-ruler-combined"></i>
+                        Area (Square Feet)
+                    </label>
+                    <input class="input-field" type="number" id="uiSqft" name="Squareft" value="1000" min="100">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <i class="fas fa-bed"></i>
+                        Bedrooms (BHK)
+                    </label>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-bhk-1" name="uiBHK" value="1">
+                        <label for="radio-bhk-1">1</label>
+                        <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked>
+                        <label for="radio-bhk-2">2</label>
+                        <input type="radio" id="radio-bhk-3" name="uiBHK" value="3">
+                        <label for="radio-bhk-3">3</label>
+                        <input type="radio" id="radio-bhk-4" name="uiBHK" value="4">
+                        <label for="radio-bhk-4">4</label>
+                        <input type="radio" id="radio-bhk-5" name="uiBHK" value="5">
+                        <label for="radio-bhk-5">5</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <i class="fas fa-bath"></i>
+                        Bathrooms
+                    </label>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1">
+                        <label for="radio-bath-1">1</label>
+                        <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked>
+                        <label for="radio-bath-2">2</label>
+                        <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3">
+                        <label for="radio-bath-3">3</label>
+                        <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4">
+                        <label for="radio-bath-4">4</label>
+                        <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5">
+                        <label for="radio-bath-5">5</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="uiLocations">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </label>
+                    <div class="select-wrapper">
+                        <select class="input-field" id="uiLocations" required>
+                            <option value="" disabled selected>Select a Location</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn-estimate" type="button" onclick="onClickedEstimatePrice()">
+                    <i class="fas fa-calculator"></i>
+                    Calculate Price
+                </button>
+
+                <div id="uiEstimatedPrice" class="result">
+                    <div class="result-content">
+                        <i class="fas fa-indian-rupee-sign result-icon"></i>
+                        <h2>Estimated Price</h2>
+                        <p class="result-text">Fill in the details above to get the price estimate</p>
+                    </div>
                 </div>
             </div>
-            
-            <h2>Area (Square Feet)</h2>
-            <input class="input-field" type="text" id="uiSqft" name="Squareft" value="1000">
-
-            <h2>BHK</h2>
-            <div class="switch-field">
-                <input type="radio" id="radio-bhk-1" name="uiBHK" value="1">
-                <label for="radio-bhk-1">1</label>
-                <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked>
-                <label for="radio-bhk-2">2</label>
-                <input type="radio" id="radio-bhk-3" name="uiBHK" value="3">
-                <label for="radio-bhk-3">3</label>
-                <input type="radio" id="radio-bhk-4" name="uiBHK" value="4">
-                <label for="radio-bhk-4">4</label>
-                <input type="radio" id="radio-bhk-5" name="uiBHK" value="5">
-                <label for="radio-bhk-5">5</label>
-            </div>
-
-            <h2>Bath</h2>
-            <div class="switch-field">
-                <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1">
-                <label for="radio-bath-1">1</label>
-                <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked>
-                <label for="radio-bath-2">2</label>
-                <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3">
-                <label for="radio-bath-3">3</label>
-                <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4">
-                <label for="radio-bath-4">4</label>
-                <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5">
-                <label for="radio-bath-5">5</label>
-            </div>
-
-            <h2>Location</h2>
-            <select class="input-field" id="uiLocations">
-                <option value="" disabled selected>Choose a Location</option>
-                <option>Koregaon Park</option>
-                <option>Baner</option>
-                <option>Viman Nagar</option>
-                <option>Kharadi</option>
-                <option>Hinjewadi</option>
-                <option>Aundh</option>
-                <option>Wakad</option>
-                <option>Magarpatta City</option>
-                <option>Kalyani Nagar</option>
-                <option>Hadapsar</option>
-                <option>Kothrud</option>
-                <option>Pimpri-Chinchwad</option>
-            </select>
-
-            <button class="btn-estimate" type="button" onclick="onClickedEstimatePrice()">Estimate Price</button>
-            <div id="uiEstimatedPrice" class="result"><h2>Price will appear here</h2></div>
         </div>
     </div>
-    
-    
+
+    <footer class="footer">
+        <p>&copy; 2024 PuneEstates. All rights reserved.</p>
+    </footer>
 </body>
 </html>
