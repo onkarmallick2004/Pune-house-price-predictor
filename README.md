@@ -41,6 +41,32 @@ This project is a **machine learning-based web application** that predicts house
 6. Deployment using Flask
 
 ---
+## 🖥️ How to Run Locally
 
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/pune-house-price-prediction.git
+cd pune-house-price-prediction
+### **2. Install Dependencies**
+pip install -r requirements.txt
+### ** 3. Run the Flask App**
+python app.py
+
+📌 How to Use
+Open the app in your browser at http://127.0.0.1:5000
+
+Enter property details:
+
+Total square feet
+
+Number of bedrooms (BHK)
+
+Number of bathrooms
+
+Location (choose from dropdown)
+
+Click on "Predict Price"
+
+The model will display the estimated price of the house in lakhs
 
 
