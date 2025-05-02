@@ -47,13 +47,16 @@ This project is a **machine learning-based web application** that predicts house
 ```bash
 git clone https://github.com/yourusername/pune-house-price-prediction.git
 cd pune-house-price-prediction
+---
 
 
- 2. Install Dependencies
+## 2. Install Dependencies
 pip install -r requirements.txt
+---
 
- 3. Run the Flask App
+## 3. Run the Flask App
 python app.py
+---
 
 
 
