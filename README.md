@@ -4,10 +4,6 @@
 
 This project is a **machine learning-based web application** that predicts house prices in Pune, India. It uses various housing features to estimate property values, aiming to assist home buyers, sellers, and real estate analysts in making informed decisions.
 
-## 🚀 Demo
-
-👉 [Live Demo Link] (Optional)  
-📂 [View Project on GitHub](#)
 
 ---
 
@@ -45,14 +41,6 @@ This project is a **machine learning-based web application** that predicts house
 6. Deployment using Flask
 
 ---
-
-## 🖥️ How to Run Locally
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/pune-house-price-prediction.git
-cd pune-house-price-prediction
-
 
 
 
