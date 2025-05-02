@@ -229,8 +229,53 @@ For support and queries:
 - Open source community
 
 ---
+<<<<<<< HEAD
 Last Updated: May 2024  
 Version: 1.0.0  
 Maintained by: [Your Name]
+=======
+
+## 🛠️ Tech Stack
+
+### 🔍 Machine Learning
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- Jupyter Notebook
+
+### 🌐 Web Development
+- Flask (Backend)
+- HTML, CSS, JavaScript (Frontend)
+
+---
+
+## 🧠 ML Workflow
+
+1. Data Collection (Pune real estate dataset)
+2. Data Cleaning (handling missing values, outliers)
+3. Feature Engineering (location encoding, area conversions)
+4. Model Training (Linear Regression / other models)
+5. Evaluation (R² Score, MAE)
+6. Deployment using Flask
+
+---
+## 🖥️ How to Run Locally
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/pune-house-price-prediction.git
+cd pune-house-price-prediction
+---
+
+
+## 2. Install Dependencies
+pip install -r requirements.txt
+---
+
+## 3. Run the Flask App
+python app.py
+---
+
+>>>>>>> 64e0c67e730fbbad228bfd6788885f7806123885
 
 
