@@ -220,7 +220,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support and queries:
 - Create an issue in the repository
-- Contact: your-email@example.com
+- Contact: your-onkarmallick1024@gmail.com
 
 ## Acknowledgments
 
